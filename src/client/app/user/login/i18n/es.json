@@ -1,0 +1,8 @@
+{
+    "LOGIN": "Iniciar Sesión",
+    "LOGIN_PASSWORD": "Contraseña",
+    "LOGIN_USERNAME": "Nombre",
+    "LOGIN_WELCOME_TO_OPM": "¡Bienvenido al Módulo de Pedidos!",
+    "LOGOUT_OPM": "¡Has cerrado sesión!",
+    "LOGIN_INVALID_USER_OR_PASSWORD": "Usuario o contraseña inválidos"
+}

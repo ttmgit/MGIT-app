@@ -1,0 +1,236 @@
+@import "material";
+// Material colors
+$primary: mat-color($candy-app-primary);
+$accent: mat-color($candy-app-accent);
+// Overrides for toast. Preferring the ng2-toastr's classes over Onsen
+toast-container .toast {
+    background-color: #FFFFFF;
+    pointer-events: auto !important;
+    line-height: inherit !important;
+    display: block !important;
+}
+
+toast-container .toast-success {
+    background-color: #51A351 !important;
+}
+
+toast-container .toast-error {
+    background-color: #BD362F !important;
+}
+
+toast-container .toast-info {
+    background-color: #2F96B4 !important;
+}
+
+toast-container .toast-warning {
+    background-color: #F89406 !important;
+}
+
+
+/*******************************
+* MD DIALOG - MATERIAL DESIGN
+* Add "modal-sm" after "modal-dialog" class for smaller dialog.
+* Get free snippets on bootpen.com
+*******************************/
+
+
+/* ----- IMPORT ROBOTO FONT FOR MD ----- */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100);
+
+/* ----- CENTER MODAL ----- */
+
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+.modal {
+    text-align: center;
+    padding: 0!important;
+}
+
+
+/* ----- DIALOG/MODAL ----- */
+
+
+/* FADE/SCALE EFFECT */
+
+.modal.fade .modal-dialog {
+    display: inline-block !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    opacity: 0 !important;
+    -webkit-transform: scale(0.1) !important;
+    -ms-transform: scale(0.1) !important;
+    -o-transform: scale(0.1) !important;
+    transform: scale(0.1) !important;
+    -webkit-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    transition: all 0.3s ease !important;
+}
+
+.modal.fade.in .modal-dialog {
+    opacity: 1 !important;
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    -o-transform: scale(1) !important;
+    transform: scale(1) !important;
+    -webkit-transform: translate3d(0%, 0, 0) !important;
+    -ms-transform: translate3d(0%, 0, 0) !important;
+    -o-transform: translate3d(0%, 0, 0) !important;
+    transform: translate3d(0%, 0, 0) !important;
+}
+
+
+/* DIALOG CONTENT */
+
+.modal-content {
+    border: none !important;
+    border-radius: 2px!important;
+    -webkit-box-shadow: 0 40px 77px rgba(0, 0, 0, 0.22), 0 27px 24px rgba(0, 0, 0, 0.2)!important;
+    -moz-box-shadow: 0 40px 77px rgba(0, 0, 0, 0.22), 0 27px 24px rgba(0, 0, 0, 0.2)!important;
+    box-shadow: 0 40px 77px rgba(0, 0, 0, 0.22), 0 27px 24px rgba(0, 0, 0, 0.2)!important;
+}
+
+
+/* DIALOG BODY */
+
+.modal-body {
+    padding: 2%;
+    text-align: center;
+}
+
+.modal-body p {
+    font-weight: 400!important;
+    font-size: 14px!important;
+    color: #212121!important;
+}
+
+.modal-body .lead {
+    font-weight: 300!important;
+    font-size: 16px!important;
+    color: #757575!important;
+}
+
+.modal-body p:last-child,
+.modal-body .lead:last-child {
+    margin-bottom: 0!important;
+}
+
+
+/* DIALOG FOOTER */
+
+.modal-footer {
+    margin-top: 24px;
+    padding: 8px 0;
+    border-top: none;
+}
+
+.modal-footer .btn {
+    height: 36px;
+    margin-right: 8px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $primary;
+    background-color: #fff;
+}
+
+.modal-footer .btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.modal-footer .btn:focus,
+.modal-footer .btn:hover {
+    color: $primary;
+}
+
+.modal-footer .btn+.btn {
+    margin-left: 0;
+}
+
+.modal-footer .btn+.btn:last-child {
+    margin-left: -4px;
+}
+
+.mat-menu-panel {
+    margin-top: 3.8rem!important;
+    float: right;
+}
+
+.mat-menu-content {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.mat-nav-list {
+    padding: 0 !important;
+}
+
+.mat-list-item-content {
+    min-height: 64px !important;
+}
+
+.mat-table-container {
+    padding: 2% !important;
+}
+
+.ui-calendar {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.ui-inputtext {
+    width: 100%;
+}
+
+.mat-menu-panel.custom-menu {
+    .mat-menu-item {
+        color: white!important;
+        font-size: 14px!important;
+        font-family: Roboto!important;
+    }
+    .mat-menu-content {
+        background-color: #272727!important;
+        height: auto!important;
+        width: 237px!important;
+        padding-top: 0px!important;
+    }
+    .mat-menu-item:hover {
+        color: #4d4d4d!important;
+        background-color: #50E3C2!important;
+        text-decoration: none!important;
+    }
+    .mat-icon {
+        color: #FFFFFF!important;
+    }
+    .mat-icon:hover {
+        color: #FFFFFF!important;
+    }
+    .cdk-overlay-backdrop-showing {
+        opacity: 0.4!important;
+        background-color: black!important;
+    }
+    .cdk-overlay-container {
+        background-color: rgba(138, 138, 138, 0.59)!important;
+    }
+    .info>.mat-icon {
+        color: #4A4A4A!important;
+    }
+    .mat-rised-button {
+        min-width: 56px!important;
+        line-height: 32px!important;
+    }
+}
+
+
+
+

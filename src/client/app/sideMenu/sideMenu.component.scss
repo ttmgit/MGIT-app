@@ -1,0 +1,23 @@
+.menu {
+    background-color: lightblue;
+    font-size: 1em;
+    font-weight: 400;
+    min-height: 64px;
+}
+
+.side-menu-list {
+    padding: 0 5%;
+}
+
+.side-menu-icon {
+    margin-left: 10px;
+    margin-right: 16px;
+    color: #737373;
+    font-size: 1.1em;
+}
+
+.md-menu-item {
+    background-color: lightgray !important;
+    cursor: pointer !important;
+    padding: 3% 12% !important;
+}

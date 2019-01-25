@@ -1,0 +1,42 @@
+<div class="container-fluid row header-container">
+  <div class="col-md-8 col-lg-8">
+    <h3>{{'SHIPPING_ORDER' | translate}}</h3>
+    <p class="sub-header">{{'ORDER_INFORMATION' | translate}}</p>
+  </div>
+  <td-search-box class="col-md-4 col-lg-4" *ngIf="!isPerformingAnAction" #searchBox backIcon="arrow_back" placeholder="Buscar" (searchDebounce)="search($event)">
+  </td-search-box>
+</div>
+
+<div class="container-fluid table-container">
+  <div class="row">
+    <td-data-table id="productsDatatable" #dataTable [data]="filteredData" [columns]="columns" [sortBy]="sortBy" [(ngModel)]="selectedRows"
+      [sortOrder]="sortOrder" (sortChange)="sort($event)" [clickable]="true">
+      <ng-template tdDataTableTemplate="id" let-value="value" let-row="row" let-column="column">
+        <a (click)="openModal(value)">{{value}}</a>
+      </ng-template>
+      <ng-template tdDataTableTemplate="orderDate" let-value="cellValue" let-row="row" let-column="column">
+        {{ row.orderDate | date: 'dd/MM/yyyy hh:mm:ss'}}
+      </ng-template>
+      <ng-template tdDataTableTemplate="optimalDeliveryDate" let-value="cellValue" let-row="row" let-column="column">
+        {{ row.optimalDeliveryDate | date: 'dd/MM/yyyy'}}
+      </ng-template>
+      <ng-template tdDataTableTemplate="account" let-value="cellValue" let-row="row" let-column="column">
+        {{ row.account[0].accountCode}}
+      </ng-template>
+      <ng-template tdDataTableTemplate="accountName" let-value="cellValue" let-row="row" let-column="column">
+        {{ row.account[0].name}}
+      </ng-template>
+      <ng-template tdDataTableTemplate="product" let-value="cellValue" let-row="row" let-column="column">
+        {{ getTotalCases(row)}}
+      </ng-template>
+    </td-data-table>
+    <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+      <h3>{{'WITHOUT_RESULTS' | translate}}</h3>
+    </div>
+    <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+      <span td-paging-bar-label hide-xs>{{'ELEMENTS_PER_PAGE' | translate}}</span> {{pagingBar.range}}
+      <span hide-xs>{{'OF' | translate}} {{pagingBar.total}}</span>
+    </td-paging-bar>
+  </div>
+
+</div>

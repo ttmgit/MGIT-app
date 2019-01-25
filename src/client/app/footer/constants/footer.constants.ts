@@ -1,0 +1,5 @@
+let FOOTER_CONSTANTS = {
+    HELLO: 'HELLO'
+};
+
+export { FOOTER_CONSTANTS };

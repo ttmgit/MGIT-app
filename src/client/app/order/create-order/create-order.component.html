@@ -1,0 +1,55 @@
+<div class="header-container">
+    <h3>{{'ORDER_BY_CATALOG' | translate}}</h3>
+    <p>{{'ORDER_INFORMATION' | translate}}</p>
+    <form [formGroup]="createOrderForm" id="orderForm" class="row">
+        <div class="col-md-4 col-lg-4">
+            <h4>{{'ACCOUNT' | translate}}</h4>
+            <md-select class="full-width account" placeholder="Selecciona tu cuenta" formControlName="currentAccount" (change)="changeAccount($event)">
+                <md-option *ngFor="let account of userAccounts" [value]="account">
+                    {{account.name}}
+                </md-option>
+            </md-select>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <h4>{{'ESTIMATED_DELIVERY_DATE' | translate}}</h4>
+            <p-calendar formControlName="optimalDeliveryDate" dateFormat="dd/mm/yy" [disabledDays]="[0,6]" [minDate]="minDate"></p-calendar>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <h4>{{'REQUEST_PERSON_NAME' | translate}}</h4>
+            <md-input-container class="full-width">
+                <input autocomplete="off" style="width:100%" mdInput name="requestPerson" formControlName="requestPerson" type="text" placeholder="Ingresa tu nombre">
+            </md-input-container>
+            <span *ngIf="createOrderForm.controls['requestPerson'].errors && createOrderForm.controls['requestPerson'].touched" class="error-message-container">
+                <span class="error-message" *ngIf="createOrderForm.controls['requestPerson'].hasError('required') && createOrderForm.controls['requestPerson'].touched">{{ 'APP_REQUIRED_FIELD' | translate }}</span>
+            </span>
+        </div>
+    </form>
+</div>
+<div>
+    <div class="row data-table">
+        <td-data-table id="productsDatatable" #dataTable [data]="filteredData" [columns]="columns" [sortBy]="sortBy" [(ngModel)]="selectedRows"
+            [sortOrder]="sortOrder" (sortChange)="sort($event)" [clickable]="true">
+            <ng-template tdDataTableTemplate="quantity" let-value="cellValue" let-row="row" let-column="column">
+                <md-input-container class="full-width">
+                    <input name="{{'quantity' + row.sku }}" mdInput type="number" value="0" min="0" (change)="updateValue($event, row)">
+                </md-input-container>
+            </ng-template>
+        </td-data-table>
+        <div class="totals-container">
+            <span class="totals total-label">{{'TOTALS' | translate}}</span><span class="totals total-1">{{totalCases}}</span><span class="totals total-2">{{totalItems}}</span>
+        </div>
+        <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+            <h3>{{'WITHOUT_RESULTS' | translate}}</h3>
+        </div>
+        <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+            <span td-paging-bar-label hide-xs>{{'ELEMENTS_PER_PAGE' | translate}}</span> {{pagingBar.range}}
+            <span hide-xs>{{'OF' | translate}} {{pagingBar.total}}</span>
+        </td-paging-bar>
+    </div>
+
+    <div class="save-button-container">
+        <button [disabled]="!createOrderForm.valid || totalItems === 0" md-raised-button class="full-width mat-primary" (click)="saveOrder()">
+            {{'SAVE' | translate}}
+        </button>
+    </div>
+</div>

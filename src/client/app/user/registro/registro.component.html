@@ -1,0 +1,67 @@
+<div class="row" align="center">
+  <div class="col-md-4 col-lg-4"></div>
+  <md-card class="login-card-align col-md-4">
+    <div class="login-title">
+      <span class="span-title">Registrate</span>
+    </div>
+    <form [formGroup]="registroForm">
+      <md-input-container class="login-input-form">
+        <input name="correo" mdInput formControlName="correo" placeholder="Correo" />
+        <md-error class="error-message" *ngIf="registroForm.controls['correo'].errors && registroForm.controls['correo'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['correo'].hasError('required') && registroForm.controls['correo'].touched">Campo requerido</p>
+        </md-error>
+      </md-input-container>
+      <md-input-container class="login-input-form">
+        <input autocomplete="off" name="password" mdInput type="password" formControlName="password" placeholder="Contraseña"/>
+        <md-error class="error-message" *ngIf="registroForm.controls['password'].errors && registroForm.controls['password'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['password'].hasError('required') && registroForm.controls['password'].touched">Campo requerido</p>
+        </md-error>
+      </md-input-container>
+      <md-input-container class="login-input-form">
+        <input name="nombreEmpresa" mdInput formControlName="nombreEmpresa" placeholder="Razón social" />
+        <md-error class="error-message" *ngIf="registroForm.controls['nombreEmpresa'].errors && registroForm.controls['nombreEmpresa'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['nombreEmpresa'].hasError('required') && registroForm.controls['nombreEmpresa'].touched">Campo requerido</p>
+        </md-error>
+      </md-input-container>
+      <md-input-container class="login-input-form">
+        <input name="nombreRepresentante" mdInput formControlName="nombreRepresentante" placeholder="Nombre de quién registra" />
+        <md-error class="error-message" *ngIf="registroForm.controls['nombreRepresentante'].errors && registroForm.controls['nombreRepresentante'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['nombreRepresentante'].hasError('required') && registroForm.controls['nombreRepresentante'].touched">Campo requerido</p>
+        </md-error>
+      </md-input-container>
+      <md-input-container class="login-input-form">
+        <input name="cargoRepresentante" mdInput formControlName="cargoRepresentante" placeholder="Cargo de quién registra" />
+        <md-error class="error-message" *ngIf="registroForm.controls['cargoRepresentante'].errors && registroForm.controls['cargoRepresentante'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['cargoRepresentante'].hasError('required') && registroForm.controls['cargoRepresentante'].touched">Campo requerido</p>
+        </md-error>
+      </md-input-container>
+      <div class="login-input-form">
+        <md-select class="login-input-form" name="sector" formControlName="sector"  placeholder="Sector" >
+          <md-option value="1">Agricultura, ganadería, silvicultura y pesca</md-option>
+          <md-option value="2">Comercio</md-option>
+          <md-option value="3">Comunicaciones y transportes</md-option>
+          <md-option value="4">Construcción</md-option>
+          <md-option value="5">Energía</md-option>
+          <md-option value="6">Minería</md-option>
+          <md-option value="7">Manufacturas</md-option>
+          <md-option value="8">Otros servicios</md-option>
+          <md-option value="9">Turismo</md-option>
+        </md-select> 
+        <md-error class="error-message" *ngIf="registroForm.controls['sector'].errors && registroForm.controls['sector'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['sector'].hasError('required') && registroForm.controls['sector'].touched">Campo requerido</p>
+        </md-error>
+      </div>
+      <md-input-container class="login-input-form">
+        <input name="subSector" mdInput formControlName="subSector" placeholder="Sector específico" />
+        <md-error class="error-message" *ngIf="registroForm.controls['subSector'].errors && registroForm.controls['subSector'].touched">
+          <p class="error-message" *ngIf="registroForm.controls['subSector'].hasError('required') && registroForm.controls['subSector'].touched">Campo requerido</p>
+        </md-error>
+      </md-input-container>
+      <md-checkbox formControlName="terminos" name="terminos" >
+        Acepto terminos y condiciones
+      </md-checkbox>
+
+      <button class="login-button" md-raised-button color="primary" [disabled]="!registroForm.valid" (click)="registrar()">Registrarse </button>
+    </form>
+  </md-card>
+</div>

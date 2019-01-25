@@ -1,0 +1,23 @@
+<div class="menu-container">
+    <img class="menu-logo" src="../../images/ciecas_logo.jpg"/>
+    <img class="menu-logo" src="../../images/sep_logo.jpg"/>
+    <div *ngIf="!userInfo" style="float: right;">
+        <button routerLink="/">
+            Inicio
+        </button> 
+        <button routerLink="/login">
+            Iniciar sesion
+        </button> 
+        <button routerLink="/registro">
+            Registrarse
+        </button> 
+    </div>
+    <div *ngIf="userInfo" style="float: right;">
+        <button routerLink="/cuenta">
+            Cuenta
+        </button>
+        <button (click)="logout()">
+            Cerrar sesión
+        </button>
+    </div>
+</div>

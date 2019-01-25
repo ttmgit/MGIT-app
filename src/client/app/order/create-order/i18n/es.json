@@ -1,0 +1,13 @@
+{
+    "ORDER_BY_CATALOG": "Creación de Solicitudes por Catálogo",
+    "ORDER_INFORMATION": "Información General de la Solicitud",
+    "ACCOUNT": "Tienda",
+    "ESTIMATED_DELIVERY_DATE": "Fecha de entrega estimada",
+    "REQUEST_PERSON_NAME": "Nombre del que solicita",
+    "TOTALS": "TOTALES:",
+    "SAVE": "GUARDAR",
+    "ERROR_TO_GET_PRODUCTS": "Ha ocurrido un error al traer los datos.",
+    "ERROR_TO_GET_ACCOUNTS": "Ha ocurrido un error al traer los datos.",
+    "ERROR_TO_CREATE_ORDER": "Error al crear la orden.",
+    "SUCCESS_TO_CREATE_ORDER": "La orden se ha creado correctamente."
+}

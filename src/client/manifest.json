@@ -1,0 +1,32 @@
+{
+  "short_name": "OPM",
+  "name": "Order Processing Module",
+  "icons": [
+    {
+      "src": "assets/icon/drawable-mdpi-icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "assets/icon/drawable-xhdpi-icon.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "assets/icon/drawable-xxhdpi-icon.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "assets/icon/drawable-xxxhdpi-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3",
+  "start_url": "index.html?launcher=true",
+  "gcm_sender_id": "103953800507"
+
+}

@@ -1,0 +1,55 @@
+.login-card-align {
+    padding: 2% 5% !important;
+    box-shadow: 0 0 60px 0 rgba(32,32,32,0.3) !important;
+    margin-top: 5%;
+  }
+  
+  .error-message {
+    color: #c30d0d;
+  }
+  
+  md-error p {
+    text-align: right;
+  }
+  
+  .span-title {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  
+  .login {
+    font-size: 0.9em;
+    font-weight: 300;
+  }
+  
+  .login-title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  
+  .login-input-form {
+    width: 80% !important;
+    height: 90%;
+  }
+  
+  .login-button {
+    width: 70% !important;
+    height: 90%;
+  }
+  @media (max-width: 610px) {
+    .login-card-align {
+      padding: 9% 5% !important;
+      box-shadow: 0 0 60px 0 rgba(32,32,32,0.3) !important;
+      margin-top: 1.5%;
+    }
+  }
+  @media (min-width: 610px) and (max-width: 1000px) {
+    .login-card-align {
+      padding: 6% 5% !important;
+      box-shadow: 0 0 60px 0 rgba(32,32,32,0.3) !important;
+      margin-top: 1.5%;
+    }
+  }
+  

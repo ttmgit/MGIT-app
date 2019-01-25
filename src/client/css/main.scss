@@ -1,0 +1,201 @@
+@import "material";
+@import "overrides";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic";
+@import "https://github.com/angular/material/blob/master/src/core/style/typography.scss";
+@import '../../../node_modules/@covalent/core/common/platform.scss';
+
+// Variables for material color palette
+//$primary: mat-color($candy-app-primary);
+//$accent: mat-color($candy-app-accent);
+$primary: rgb(86, 202, 101);
+$accent: rgb(255, 124, 124);
+
+/* Reset */
+
+body,
+div,
+html {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Box-sizing border-box */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* Set up a default font and some padding to provide breathing room */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  margin-top: 10px !important;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: .01em;
+  line-height: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+li {
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+input {
+  border: 1px solid #106cc8;
+  font-size: 14px;
+  height: 40px;
+  outline: none;
+  padding: 8px;
+}
+
+#dnaLogo {
+  padding: 0;
+}
+
+.a-color {
+  color: $primary;
+  cursor: pointer;
+}
+
+.user-links-container {
+  padding: 0;
+}
+
+.radio-item input[type='radio'] {
+  display: none;
+}
+
+.radio-item label {
+  color: #4A494A;
+  font-weight: normal;
+}
+
+.radio-item label:before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 1.5vw;
+  height: 1.5vw;
+  border-radius: 1.5vw;
+  border: 1px solid #323233;
+  background-color: transparent;
+}
+
+.radio-item input[type=radio]:checked+label:after {
+  border-radius: 1vw;
+  width: 1.1vw;
+  height: 1.1vw;
+  position: absolute;
+  top: .55vw;
+  left: .65vw;
+  content: " ";
+  display: block;
+  background: rgb(251, 97, 132);
+}
+
+.remove-padding {
+  padding: 0 !important;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+.full-height {
+  height: 100% !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.arrow-down {
+  font-size: 2.5vw;
+}
+
+.center-img {
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-rigth {
+  text-align: right;
+}
+
+.align-right {
+  float: right;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-bottom {
+  position: absolute;
+  bottom: 2%;
+}
+
+.sub-header {
+  margin: 1% 0;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#mainContent {
+  transition: padding-left .5s;
+  min-height: 40vw;
+  background-color: white;
+  padding-bottom: 1.5%;
+}
+
+#sideNavI,
+#sideNavM {
+  transition: height .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+

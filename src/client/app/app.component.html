@@ -1,0 +1,9 @@
+<mgit-main-menu></mgit-main-menu>
+<md-sidenav-container>
+    <md-sidenav *ngIf="userInfo" opened mode="side">
+        <opm-side-menu>
+        </opm-side-menu>
+    </md-sidenav>
+    <router-outlet></router-outlet>
+</md-sidenav-container>
+<mgit-footer></mgit-footer>

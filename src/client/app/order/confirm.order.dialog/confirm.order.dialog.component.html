@@ -1,0 +1,25 @@
+<div class="confirm-dialog-container">
+    <h3 md-dialog-title>{{'CONFIRM' | translate}}</h3>
+    <div md-dialog-content>
+        <p><b>{{'DELIVERY_DATE' | translate}}</b>{{orderDetail.optimalDeliveryDate | date: 'dd/MM/yyyy'}}</p>
+        <p><b>{{'REQUEST_PERSON' | translate}}</b>{{orderDetail.requestPerson}}</p>
+        <p><b>{{'REQUESTED_PRODUCTS' | translate}}</b></p>
+        <div class="row">
+            <td-data-table id="productsDatatable" #dataTable [data]="filteredData" [columns]="columns" [sortBy]="sortBy" [(ngModel)]="selectedRows"
+                [sortOrder]="sortOrder" (sortChange)="sort($event)" [clickable]="true">
+            </td-data-table>
+            <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+                <h3>{{'WITHOUT_RESULTS' | translate}}</h3>
+            </div>
+            <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="filteredTotal" (change)="page($event)">
+                <span td-paging-bar-label hide-xs>{{'ELEMENTS_PER_PAGE' | translate}}</span> {{pagingBar.range}}
+                <span hide-xs>{{'OF' | translate}} {{pagingBar.total}}</span>
+            </td-paging-bar>
+
+        </div>
+    </div>
+    <div md-dialog-actions class="align-right">
+        <button md-raised-button class="action-button" (click)="onNoClick()">{{'NO' | translate}}</button>
+        <button md-raised-button class="mat-primary action-button" (click)="onYesClick()">{{'YES' | translate}}</button>
+    </div>
+</div>

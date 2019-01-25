@@ -1,0 +1,7 @@
+<div *ngFor="let menu of menuItems; let menuIndex = index">
+    <md-nav-list class="side-menu-list">
+        <a md-list-item class="menu" [routerLink]="[menu.url]" [routerLinkActive]="['router-link-active']">
+            <i class="{{menu.moduleIcon}} side-menu-icon"></i>{{menu.descripcion }}
+        </a>
+    </md-nav-list>
+</div>

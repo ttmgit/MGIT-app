@@ -1,0 +1,51 @@
+.header-container {
+    padding: 2% 3%;
+}
+
+.account {
+    margin-top: 3rem;
+}
+
+.data-table {
+    padding: 0 2.5%;
+}
+
+.error-message-container {
+    position: absolute;
+    font-size: 0.8em;
+    color: red;
+    top: 8.3em;
+}
+
+.totals-container {
+    background-color: lightgray;
+    margin: 0 2%;
+    height: 2em;
+    margin-top: -2.2rem;
+    position: relative;
+}
+
+.totals {
+    position: absolute;
+    top: 18%;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.total-label {
+    left: 49%;
+}
+
+.total-1 {
+    left: 67.7%;
+}
+
+.total-2 {
+    left: 88.9%;
+}
+
+.save-button-container {
+    float: right;
+    margin: 2% 4.5%;
+    width: 13.5%;
+}

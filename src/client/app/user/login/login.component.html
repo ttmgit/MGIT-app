@@ -1,0 +1,22 @@
+<div class="row" align="center">
+  <div class="col-md-4 col-lg-4"></div>
+  <md-card class="login-card-align col-md-4">
+    <p class="login">Iniciar Sesión</p>
+    <form [formGroup]="loginForm">
+      <md-input-container class="login-input-form">
+        <input autocomplete="off" name="username" mdInput formControlName="username" placeholder="{{ 'LOGIN_USERNAME' | translate }}" />
+        <md-error class="error-message" *ngIf="loginForm.controls['username'].errors && loginForm.controls['username'].touched">
+          <p class="error-message" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">{{'APP_REQUIRED_FIELD' | translate}}</p>
+        </md-error>
+      </md-input-container>
+      <md-input-container class="login-input-form">
+        <input autocomplete="off" name="password" mdInput type="password" formControlName="password" placeholder="{{ 'LOGIN_PASSWORD' | translate }}"
+        />
+        <md-error class="error-message" *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched">
+          <p class="error-message" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">{{'APP_REQUIRED_FIELD' | translate}}</p>
+        </md-error>
+      </md-input-container>
+      <button class="login-button" md-raised-button color="primary" [disabled]="!loginForm.valid" (click)="onEnter()">{{ 'APP_LOGIN' | translate }} </button>
+    </form>
+  </md-card>
+</div>

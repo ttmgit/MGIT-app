@@ -1,0 +1,11 @@
+<div class="row" align="center">
+  <div *ngIf="errorParametros">
+    No existen datos para mostrar
+  </div>
+  <div *ngIf="!errorParametros">
+    <button [routerLink]="['/formulario', idFormulario]">Evalua</button>
+    Grafica
+
+    {{reporte}}
+  </div>
+</div>
