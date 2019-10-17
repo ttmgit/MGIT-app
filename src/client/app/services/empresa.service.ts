@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Restangular } from 'ngx-restangular';
-import { Usuario } from '../shared/types/usuario';
-import { GENERAL } from '../shared/constants/general.constants';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { Cuenta } from '../shared/types/cuenta';
 
-const RESPONSE_CONSTRUCTOR_NAME = 'Response';
 const EMPRESA_URL: string = 'empresa';
 const MENU_URL: string = 'menus';
 const REPORTE_URL: string = 'reporte';
 const FORMULARIO_URL: string = 'formulario';
+const SECTOR_URL: string = 'sector';
+const TAMANIO_URL: string = 'tamanio';
 
 @Injectable()
 export class EmpresaService {
@@ -61,6 +60,24 @@ export class EmpresaService {
         return this.restAngular
             .all(EMPRESA_URL)
             .customPOST(registro)
+            .map(this.extractDataRestangular)
+            .catch(this.handleError);
+    }
+
+    public obtenerSectores(): Observable<any[]> {
+        return this.restAngular
+            .all(EMPRESA_URL)
+            .all(SECTOR_URL)
+            .customGET()
+            .map(this.extractDataRestangular)
+            .catch(this.handleError);
+    }
+
+    public obtenerTamaniosEmpresa(): Observable<any[]> {
+        return this.restAngular
+            .all(EMPRESA_URL)
+            .all(TAMANIO_URL)
+            .customGET()
             .map(this.extractDataRestangular)
             .catch(this.handleError);
     }

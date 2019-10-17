@@ -4,10 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GENERAL } from '../../shared/constants/general.constants';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
-import { TokenResponseInterface } from '../../shared/auth/token-response.interface';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '../user.service';
-import { Usuario } from '../../shared/types/usuario';
 import { Router } from '@angular/router';
 import { Cuenta } from '../../shared/types/cuenta';
 import { EmpresaService } from '../../services/empresa.service';
@@ -23,17 +21,19 @@ export class RegistroComponent implements OnInit {
 
     public registroForm: FormGroup;
     public messages: any[];
-
+    public sectores: any[];
+    public tamanios: any[];
 
     constructor(private formBuilder: FormBuilder,
         private toastr: ToastsManager,
         private router: Router,
-        private translateService: TranslateService,
-        private authService: AuthService,
         private userService: UserService,
         private empresaService: EmpresaService
     ) {
         this.messages = [];
+        this.sectores = [];
+        this.tamanios = [];
+        this.traerValoresIniciales();
         this.initializeLoginForm();
     }
 
@@ -54,7 +54,8 @@ export class RegistroComponent implements OnInit {
             cargoRepresentante: ['', Validators.compose([Validators.required])],
             sector: ['', Validators.compose([Validators.required])],
             subSector: ['', Validators.compose([Validators.required])],
-            terminos: ['', Validators.compose([Validators.required])]
+            terminos: ['', Validators.compose([Validators.required])],
+            tamanio: ['', Validators.compose([Validators.required])]
         });
     }
 
@@ -67,7 +68,8 @@ export class RegistroComponent implements OnInit {
             nombreRepresentante: this.registroForm.value.nombreRepresentante,
             cargoRepresentante: this.registroForm.value.cargoRepresentante,
             sector: this.registroForm.value.sector,
-            subSector: this.registroForm.value.subSector
+            subSector: this.registroForm.value.subSector,
+            tamanio: this.registroForm.value.tamanio
         };
         this.empresaService.crearEmpresa(registro).subscribe((response) => {
             this.toastr.success('Registro correcto', GENERAL.APP_SUCCESS_TITLE);
@@ -82,6 +84,19 @@ export class RegistroComponent implements OnInit {
         if(user){
             this.router.navigate(['login']);
         }
+    }
+
+    public traerValoresIniciales(): void {
+        this.empresaService.obtenerSectores().subscribe((sectoresService: any[]) => {
+            console.log(sectoresService);
+        }, (error) => {
+            console.log(error);
+        });
+        this.empresaService.obtenerTamaniosEmpresa().subscribe((tamaniosEmpresaService: any[]) => {
+            console.log(tamaniosEmpresaService);
+        }, (error) => {
+            console.log(error);
+        });
     }
 
 }

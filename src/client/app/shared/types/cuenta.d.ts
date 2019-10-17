@@ -9,4 +9,5 @@ export class Cuenta {
     public sector?: number;
     public subSector?: number;
     public passwordAnterior?: string;
+    public tamanio?: number;
 }

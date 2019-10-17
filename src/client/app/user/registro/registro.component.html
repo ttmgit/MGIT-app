@@ -51,6 +51,13 @@
           <p class="error-message" *ngIf="registroForm.controls['sector'].hasError('required') && registroForm.controls['sector'].touched">Campo requerido</p>
         </md-error>
       </div>
+      <div class="login-input-form">
+        <md-select class="login-input-form" name="tamanio" formControlName="tamanio"  placeholder="Tamaño" >
+          <md-option value="1">Pequeña</md-option>
+          <md-option value="2">Mediana</md-option>
+          <md-option value="3">Grande</md-option>
+        </md-select>
+      </div>
       <md-input-container class="login-input-form">
         <input name="subSector" mdInput formControlName="subSector" placeholder="Sector específico" />
         <md-error class="error-message" *ngIf="registroForm.controls['subSector'].errors && registroForm.controls['subSector'].touched">
