@@ -159,7 +159,7 @@
     "font-awesome": "4.7.0",
     "gulp-merge-json": "1.0.0",
     "intl": "1.2.5",
-    "lodash": "4.17.4",
+    "lodash": "4.17.21",
     "moment": "2.18.1",
     "ng2-toastr": "4.0.1",
     "ngx-bootstrap": "1.7.1",
